@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+	<title>Bistro 1491</title>
+	<div id="mainDiv">
+		<img src="Logo.png">
+		<div id="linkContainer">
+			<a href="index.html">Home</a>
+			<a href="menu.html">Menu</a>
+			<a href="res.html">Reservations</a>
+			<a href="contact.html">Contact/About Us</a>
+		</div>
+		
+	</div>
+</head>
+<body>
+	
+	<div class="menuhead" id="resHead">
+		<h1 class=title>Make a reservation with us!</h1>
+		<p class="randomTxt">Our restaurant is open from 9:30 AM - 11:00 PM. Last Seating is at 10:00 PM</p>
+	</div>
+
+	<div class="info">
+		<input id="resName" placeholder="Enter Name for Reservation" class="inputs">
+		<input type="date" id="resDate" class="inputs">
+		<input type="time" id="resTime" class="inputs">
+	</div>
+
+	<div id="button">
+		<button onclick="makeRes()" >Make Reservation</button>
+	</div>
+
+	<p id="resMade" class="randomTxt"></p>
+
+	<br>
+
+	<div class="menuhead">
+		<h1 class="title" id="orderHead">Order for Pickup!</h1>
+		<p class="randomTxt">Note: we only have the items listed below for pickup. No other additions will be accepted. See menu for item descriptions.</p>
+		<p class="randomTxt">Orders normally take 30 minutes to complete, but may take longer depending on order size.</p>
+		<p class="randomTxt">Sauces and drinks will be available during pickup on location. All sauces for online orders will be free of charge</p>
+	</div>
+
+	<p class="randomTxt">Cost (with tax): </p>
+	<p class="randomTxt" id="cost"></p>
+
+	<div class="info">
+	<input placeholder="Enter Name for order" id="orderName" class="inputs">
+	</div>
+	<div id="button">
+	<button onclick="order()">Submit Order</button>
+	</div>
+
+	<p id="orderMade" class="randomTxt"></p>
+
+	<h1 class="title" id="orderHead">Appetizers</h1>
+	<div class="row">
+		<div class="item">
+			<img src="hearts.png" class="orderImgs">
+			<p class="randomTxt">Hearts of the Empire</p>
+			<p class="randomTxt">$7.99</p>	
+			<button onclick="addItem1()">Add</button> 
+			<button onclick="removeItem1()">Remove</button>
+			<p class="randomTxt" id="itemCount1">Item Count:</p>	
+		</div>
+
+		<div class="item">
+			<img src="firencream.png" class="orderImgs">
+			<p class="randomTxt">Fire & Cream</p>
+			<p class="randomTxt">$6.99</p>	
+			<button onclick="addItem2()">Add</button>
+			<button onclick="removeItem2()">Remove</button>
+			<p class="randomTxt" id="itemCount2">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="onion.png" class="orderImgs">
+			<p class="randomTxt">Blumen Onion</p>
+			<p class="randomTxt">$9.99</p>	
+			<button onclick="addItem3()">Add</button>
+			<button onclick="removeItem3()">Remove</button>
+			<p class="randomTxt" id="itemCount3">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="curry.png" class="orderImgs">
+			<p class="randomTxt">Marathi Maha-Khana</p>
+			<p class="randomTxt">$4.50</p>	
+			<button onclick="addItem4()">Add</button>
+			<button onclick="removeItem4()">Remove</button>
+			<p class="randomTxt" id="itemCount4">Item Count:</p>
+		</div>
+	</div>
+
+	<h1 class="title" id="orderHead">Sides</h1>
+	<div class="row">
+		<div class="item">
+			<img src="potatoes.png" class="orderImgs">
+			<p class="randomTxt">Potatoes Worth Your Pesos</p>
+			<p class="randomTxt">$7.99</p>	
+			<button onclick="addItem5()">Add</button>
+			<button onclick="removeItem5()">Remove</button>
+			<p class="randomTxt" id="itemCount5">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="soup.png" class="orderImgs">
+			<p class="randomTxt">Tenochtitlan Soup</p>
+			<p class="randomTxt">$6.99</p>	
+			<button onclick="addItem6()">Add</button>
+			<button onclick="removeItem6()">Remove</button>
+			<p class="randomTxt" id="itemCount6">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="macncheese.png" class="orderImgs">
+			<p class="randomTxt">Mac & Cheese</p>
+			<p class="randomTxt">$12.99</p>	
+			<button onclick="addItem7()">Add</button>
+			<button onclick="removeItem7()">Remove</button>
+			<p class="randomTxt" id="itemCount7">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="salad.png" class="orderImgs">
+			<p class="randomTxt">Salad</p>
+			<p class="randomTxt">$14.99</p>	
+			<button onclick="addItem8()">Add</button>
+			<button onclick="removeItem8()">Remove</button>
+			<p class="randomTxt" id="itemCount8">Item Count:</p>
+		</div>
+	</div>
+
+	<h1 class="title" id="orderHead">Desserts</h1>
+	<div class="row">
+		<div class="item">
+			<img src="tacos.png" class="orderImgs">
+			<p class="randomTxt">Dessert Tacos</p>
+			<p class="randomTxt">$10.99</p>	
+			<button onclick="addItem9()">Add</button>
+			<button onclick="removeItem9()">Remove</button>
+			<p class="randomTxt" id="itemCount9">Item Count:</p>
+		</div>
+
+		<div class="item">
+			<img src="bread.png" class="orderImgs">
+			<p class="randomTxt">Banana Bread</p>
+			<p class="randomTxt">$22.99</p>	
+			<button onclick="addItem10()">Add</button>
+			<button onclick="removeItem10()">Remove</button>
+			<p class="randomTxt" id="itemCount10">Item Count:</p>
+		</div>
+	</div>
+
+</body>
+</html>
